@@ -1,0 +1,29 @@
+workflows:
+  flutter-ios-unsigned:
+    name: Flutter iOS (unsigned)
+    instance_type: mac_mini_m2
+    max_build_duration: 120
+    environment:
+      flutter: stable
+      xcode: latest
+      cocoapods: default
+    cache:
+      cache_paths:
+        - ~/.pub-cache
+        - ~/Library/Caches/CocoaPods
+    scripts:
+      - name: Get Flutter packages
+        script: |
+          cd "android app"
+          flutter pub get
+      - name: Install CocoaPods dependencies
+        script: |
+          cd "android app/ios"
+          pod install
+      - name: Build iOS without code signing
+        script: |
+          cd "android app"
+          flutter build ios --debug --no-codesign
+    artifacts:
+      - android app/build/ios/iphoneos/**/*.app
+      - /tmp/xcodebuild_logs/*.log
