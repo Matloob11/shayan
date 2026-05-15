@@ -1,0 +1,17 @@
+# Ignore the folder the user asked to skip
+/syed shayan app/
+
+# Flutter/Dart ignores (adjusted for root-relative paths)
+/android app/.dart_tool/
+/android app/.flutter-plugins
+/android app/.flutter-plugins-dependencies
+/android app/.packages
+/android app/.pub/
+/android app/build/
+/android app/.idea/
+/android app/.vscode/
+/android app/*.iml
+
+# Other ignores
+.gitconfig-codex
+error_log

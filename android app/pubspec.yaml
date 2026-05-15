@@ -1,0 +1,28 @@
+name: syed_shayan_app
+description: Flutter app scaffold for SyedShayan.com
+publish_to: "none"
+
+version: 1.0.0+1
+
+environment:
+  sdk: ">=3.3.0 <4.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.8
+  http: ^1.2.2
+  webview_flutter: ^4.13.0
+  webview_flutter_web: ^0.2.3+4
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^4.0.0
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/home/
+    - assets/home/footer_icons/
+    - assets/home/footer_pillars/
