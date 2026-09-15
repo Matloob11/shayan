@@ -14,16 +14,14 @@ workflows:
     scripts:
       - name: Get Flutter packages
         script: |
-          cd "android app"
           flutter pub get
       - name: Install CocoaPods dependencies
         script: |
-          cd "android app/ios"
+          cd ios
           pod install
       - name: Build iOS without code signing
         script: |
-          cd "android app"
           flutter build ios --debug --no-codesign
     artifacts:
-      - android app/build/ios/iphoneos/**/*.app
+      - build/ios/iphoneos/**/*.app
       - /tmp/xcodebuild_logs/*.log
